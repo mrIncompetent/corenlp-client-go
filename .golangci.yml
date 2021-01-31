@@ -1,0 +1,18 @@
+run:
+  tests: false
+linters:
+  enable-all: true
+  disable:
+  - gomnd
+  - maligned
+  - exhaustivestruct
+  build-tags:
+    - integration
+linters-settings:
+  errcheck:
+    check-type-assertions: true
+    check-blank: true
+  misspell:
+    locale: US
+  lll:
+    line-length: 160
