@@ -33,3 +33,7 @@ func main() {
 	log.Println(*doc.Sentence[0].Sentiment) // Prints: Positive
 }
 ```
+
+## License
+
+This library is released under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for more details.
