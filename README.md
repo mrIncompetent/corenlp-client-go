@@ -1,2 +1,3 @@
 # corenlp-client-go
-Golang client for CoreNLP
+
+A [CoreNLP](https://stanfordnlp.github.io/CoreNLP/) client written in Go which uses [Protobuf](https://developers.google.com/protocol-buffers) for message serialization.
