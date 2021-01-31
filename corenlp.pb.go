@@ -4,7 +4,7 @@
 // 	protoc        v3.12.4
 // source: corenlp.proto
 
-package corenlp_client
+package corenlp
 
 import (
 	proto "github.com/golang/protobuf/proto"

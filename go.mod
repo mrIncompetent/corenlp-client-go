@@ -1,4 +1,4 @@
-module github.com/mrincompetent/corenlp-client
+module github.com/mrincompetent/corenlp-client-go
 
 go 1.15
 

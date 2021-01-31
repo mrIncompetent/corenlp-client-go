@@ -1,2 +1,2 @@
-# corenlp-client
+# corenlp-client-go
 Golang client for CoreNLP
