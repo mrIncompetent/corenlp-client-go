@@ -75,8 +75,9 @@ func (c *Client) newRequest(ctx context.Context, text string, annotators []strin
 	q.Set("properties", string(requestPropertiesJSON))
 	u.RawQuery = q.Encode()
 
-	doc := &Document{}
-	doc.Text = &text
+	doc := &Document{
+		Text: &text,
+	}
 
 	encodedMessage, err := marshalMessage(doc)
 	if err != nil {
