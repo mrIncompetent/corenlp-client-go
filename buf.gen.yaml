@@ -1,0 +1,9 @@
+version: v1beta1
+plugins:
+  - name: go
+    path: ./bin/protoc-gen-go
+    out: .
+    opt:
+      - paths=import
+      - module=github.com/mrincompetent/corenlp-client-go
+      - Msrc/edu/stanford/nlp/pipeline/CoreNLP.proto=github.com/mrincompetent/corenlp-client-go;corenlp

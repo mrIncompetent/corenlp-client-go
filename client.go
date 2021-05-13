@@ -15,9 +15,6 @@ import (
 	"google.golang.org/protobuf/runtime/protoiface"
 )
 
-//go:generate curl -s -o "corenlp.proto" https://raw.githubusercontent.com/stanfordnlp/CoreNLP/v4.2.0/src/edu/stanford/nlp/pipeline/CoreNLP.proto
-//go:generate protoc --go_out=import_path=corenlp:. corenlp.proto
-
 type RequestExecutor interface {
 	Do(req *http.Request) (*http.Response, error)
 }
@@ -48,17 +45,17 @@ type requestProperties struct {
 }
 
 const (
-	DataFormatSerialized   = "serialized"
-	DataSerializerProtobuf = "edu.stanford.nlp.pipeline.ProtobufAnnotationSerializer"
+	dataFormatSerialized   = "serialized"
+	dataSerializerProtobuf = "edu.stanford.nlp.pipeline.ProtobufAnnotationSerializer"
 )
 
 func (c *Client) newRequest(ctx context.Context, text string, annotators []string) (*http.Request, error) {
 	properties := &requestProperties{
-		OutputFormat:    DataFormatSerialized,
-		Serializer:      DataSerializerProtobuf,
+		OutputFormat:    dataFormatSerialized,
+		Serializer:      dataSerializerProtobuf,
 		Annotators:      strings.Join(annotators, ","),
-		InputFormat:     DataFormatSerialized,
-		InputSerializer: DataSerializerProtobuf,
+		InputFormat:     dataFormatSerialized,
+		InputSerializer: dataSerializerProtobuf,
 	}
 
 	requestPropertiesJSON, err := json.Marshal(properties)

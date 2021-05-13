@@ -6,6 +6,8 @@ linters:
   - gomnd
   - maligned
   - exhaustivestruct
+  - interfacer
+  - scopelint
   build-tags:
     - integration
 linters-settings:
