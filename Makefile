@@ -26,3 +26,7 @@ gen: $(BUF) $(PROTOC_GEN_GO)
 .PHONY: lint
 lint: $(GOLANGCI_LINT)
 	$(GOLANGCI_LINT) run --config ./.golangci.yml
+
+.PHONY: test
+test:
+	go test ./...
